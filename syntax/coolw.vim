@@ -15,8 +15,6 @@ syn match coolwSpecialChar "\\[btnfr\\"]" contained
 syn keyword coolwOperator isvoid
 syn match coolwOperator "=>\|\~=\|[<>][-=]\=\|=\|[+*\/~]"
 
-syn match coolwFeature "[a-z][a-zA-Z0-9_]*(\([a-z][a-zA-Z0-9_]* : [A-Z][a-zA-Z0-9_]*\(, [a-z][a-zA-Z0-9_]* : [A-Z][a-zA-Z0-9_]*\)*\)\=) : [A-Z][a-zA-Z0-9_]*" contains=coolwId,coolwFormal,coolwFormalType
-
 syn match coolwId "[a-z][a-zA-Z0-9_]*"
 syn keyword coolwType Object IO Int Str Bool SELF_TYPE
 syn match coolwType "[A-Z][a-zA-Z0-9_]*"
@@ -43,8 +41,6 @@ hi def link coolwOperator Operator
 " also a bit ugly
 " hi def link coolwId Identifier
 hi def link coolwType Type
-hi def link coolwFormalId coolwId
-hi def link coolwFormalType coolwType
 
 hi def link coolwComment Comment
 hi def link coolwCommentBlock coolwComment
