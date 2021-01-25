@@ -1,1 +1,1 @@
-au BufNewFile,BufRead *.wool set filetype=wool
+au BufNewFile,BufRead *.wl set filetype=wool
