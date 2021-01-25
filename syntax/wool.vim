@@ -18,20 +18,21 @@ if exists("b:current_syntax")
 endif
 
 syn keyword woolRepeat while loop pool
-syn keyword woolConditional if then else fi case of esac
+syn keyword woolConditional if then else fi select end
 syn keyword woolClassDecl class inherits
 syn keyword woolStatement let in
 
 syn keyword woolBoolean true false
 syn match woolNumber '\<-\=\d\+\>'
 syn region woolString start='"' skip=/\v\\./ end='"' contains=woolSpecialChar
-syn match woolSpecialChar "\\[btnfr\\"]" contained
+syn match woolSpecialChar "\\[tn\\"]" contained
+syn keyword woolConstant null
 
-syn keyword woolOperator isvoid
+syn keyword woolOperator isnull
 syn match woolOperator "=>\|\~=\|[<>][-=]\=\|=\|[+*\/~]"
 
 syn match woolId "[a-z][a-zA-Z0-9_]*"
-syn keyword woolType Object IO Int Str Bool SELF_TYPE
+syn keyword woolType Object IO Str int boolean SELF_TYPE
 syn match woolType "[A-Z][a-zA-Z0-9_]*"
 
 syn match woolComment "--#.*$" contains=woolTodo
@@ -50,6 +51,7 @@ hi def link woolBoolean Boolean
 hi def link woolNumber Number
 hi def link woolString String
 hi def link woolSpecialChar SpecialChar
+hi def link woolConstant Constant
 
 hi def link woolOperator Operator
 
