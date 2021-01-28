@@ -35,7 +35,7 @@ syn match woolId "[a-z][a-zA-Z0-9_]*"
 syn keyword woolType Object IO Str int boolean SELF_TYPE
 syn match woolType "[A-Z][a-zA-Z0-9_]*"
 
-syn match woolComment "--#.*$" contains=woolTodo
+syn match woolComment "#.*$" contains=woolTodo
 syn region woolCommentBlock start='(\*' end='\*)' contains=woolTodo,woolCommentBlock
 syn match woolCommentBlockError "\*)"
 syn keyword woolTodo contained TODO FIXME XXX
